@@ -22,7 +22,7 @@
         <groupId>com.oracle.soa</groupId>
         <artifactId>sar-common</artifactId>
         <version>12.1.3-0-0</version>
-		<relativePath/>
+		<relativePath>${project.groupId}/${project.artifactId}/pom.xml</relativePath>
     </parent>
     
     <properties>
