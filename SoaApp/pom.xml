@@ -79,7 +79,7 @@
                     <compositeRevision>${composite.revision}</compositeRevision>
                     <revision>${composite.revision}</revision>
                     <scacInputDir>${scac.input.dir}</scacInputDir>                    
-                    <input>${input}</input> 
+                    <input>${project.artifactId}</input> 
                 </configuration>
                  <!-- extensions=true is needed to use the custom sar packaging type -->
                 <extensions>true</extensions>
