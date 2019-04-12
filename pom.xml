@@ -20,8 +20,8 @@
            do not have to specify them over and over in every project POM.
     --> 
     <parent>
-        <groupId>oracle.soa.plugin</groupId>
-        <artifactId>oracle-soa-plugin</artifactId>
+        <groupId>com.oracle.soa</groupId>
+        <artifactId>sar-common</artifactId>
         <version>12.1.3-0-0</version>
         <relativePath></relativePath>
     </parent>
