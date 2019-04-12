@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config">
+    <con:coreEntry>
+        <con:binding type="Any XML"/>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f5783fd.N456f4f0c.0.16a12e9c2f5.N8000">
+            <con:stage id="_StageId-N3f5783fd.N456f4f0c.0.16a12e9c2f5.N7ffe" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f5783fd.N456f4f0c.0.16a12e9c2f5.N7fff">
+            <con:stage id="_StageId-N3f5783fd.N456f4f0c.0.16a12e9c2f5.N7ffd" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="PipelinePairNode1">
+                <con:request>request-N3f5783fd.N456f4f0c.0.16a12e9c2f5.N8000</con:request>
+                <con:response>response-N3f5783fd.N456f4f0c.0.16a12e9c2f5.N7fff</con:response>
+            </con:pipeline-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
