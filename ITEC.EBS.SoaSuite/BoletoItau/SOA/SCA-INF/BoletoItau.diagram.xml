@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="pollingBoletos">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="378" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="371" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="pollingBoletos" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/pollingBoletos#wsdl.interface(pollingBoletos_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/aq_adapter_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>receive</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="Autorizador">
+        <dgm:body borderWidth="2" arcRad="20" X="756" Y="380" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="746" Y="373" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="Autorizador" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://Edenred.Services/BoletoItau#wsdl.interface(AutorizadorItauSoap)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>AutorizadorItau</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="GerarBoleto">
+        <dgm:body borderWidth="2" arcRad="20" X="756" Y="26" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="746" Y="19" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="GerarBoleto" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ITEC.EBS.ServiceBus/BoletoItau/geradorBoletosItau#wsdl.interface(geradorBoletosItau_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>geradorBoletos</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="REGISTRA_BOLETO">
+        <dgm:body borderWidth="2" arcRad="20" X="756" Y="144" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="746" Y="137" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="REGISTRA_BOLETO" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/REGISTRA_BOLETO#wsdl.interface(REGISTRA_BOLETO_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/aq_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>REGISTRA_BOLETO</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="REGISTRA_LOG_ERRO">
+        <dgm:body borderWidth="2" arcRad="20" X="756" Y="262" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="746" Y="255" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="REGISTRA_LOG_ERRO" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/REGISTRA_LOG_ERRO#wsdl.interface(REGISTRA_LOG_ERRO_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/aq_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>REGISTRA_LOG_ERRO</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="ATUALIZA_TOKEN">
+        <dgm:body borderWidth="2" arcRad="20" X="756" Y="498" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="746" Y="491" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="ATUALIZA_TOKEN" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/ATUALIZA_TOKEN#wsdl.interface(ATUALIZA_TOKEN_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/aq_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>ATUALIZA_TOKEN</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="CONSULTA_TOKEN">
+        <dgm:body borderWidth="2" arcRad="20" X="756" Y="616" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="746" Y="609" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="CONSULTA_TOKEN" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/CONSULTA_TOKEN#wsdl.interface(CONSULTA_TOKEN_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/aq_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>CONSULTA_TOKEN</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="ATUALIZA_STATUS">
+        <dgm:body borderWidth="2" arcRad="20" X="756" Y="734" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="746" Y="727" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="ATUALIZA_STATUS" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/ATUALIZA_STATUS#wsdl.interface(ATUALIZA_STATUS_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/aq_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>ATUALIZA_STATUS</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="EXCLUI_POLLING">
+        <dgm:body borderWidth="2" arcRad="20" X="756" Y="852" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="746" Y="845" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="EXCLUI_POLLING" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/EXCLUI_POLLING#wsdl.interface(EXCLUI_POLLING_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/aq_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>EXCLUI_POLLING</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="RegistrarBoleto">
+        <dgm:body borderWidth="2" arcRad="20" X="392" Y="363" width="130" height="236">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="382" Y="356" width="150" height="252">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="pollingBoletos" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/pollingBoletos#wsdl.interface(pollingBoletos_ptt)"/>
+        <dgm:outputPort name="GerarBoleto" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ITEC.EBS.ServiceBus/BoletoItau/geradorBoletosItau#wsdl.interface(geradorBoletosItau_ptt)"/>
+        <dgm:outputPort name="REGISTRA_BOLETO" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/REGISTRA_BOLETO#wsdl.interface(REGISTRA_BOLETO_ptt)"/>
+        <dgm:outputPort name="REGISTRA_LOG_ERRO" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/REGISTRA_LOG_ERRO#wsdl.interface(REGISTRA_LOG_ERRO_ptt)"/>
+        <dgm:outputPort name="Autorizador" X="120" Y="90" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://Edenred.Services/BoletoItau#wsdl.interface(AutorizadorItauSoap)"/>
+        <dgm:outputPort name="ATUALIZA_TOKEN" X="120" Y="115" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/ATUALIZA_TOKEN#wsdl.interface(ATUALIZA_TOKEN_ptt)"/>
+        <dgm:outputPort name="CONSULTA_TOKEN" X="120" Y="140" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/CONSULTA_TOKEN#wsdl.interface(CONSULTA_TOKEN_ptt)"/>
+        <dgm:outputPort name="ATUALIZA_STATUS" X="120" Y="165" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/ATUALIZA_STATUS#wsdl.interface(ATUALIZA_STATUS_ptt)"/>
+        <dgm:outputPort name="EXCLUI_POLLING" X="120" Y="190" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/ITEC.EBS.SoaSuite/BoletoItau/EXCLUI_POLLING#wsdl.interface(EXCLUI_POLLING_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="RegistrarBoleto/GerarBoleto" target="GerarBoleto" width="2">
+        <dgm:gSegment X1="532" Y1="388" X2="556" Y2="388"/>
+        <dgm:gSegment X1="556" Y1="388" X2="556" Y2="36"/>
+        <dgm:gSegment X1="556" Y1="36" X2="746" Y2="36"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="RegistrarBoleto/REGISTRA_BOLETO" target="REGISTRA_BOLETO" width="2">
+        <dgm:gSegment X1="532" Y1="413" X2="571" Y2="413"/>
+        <dgm:gSegment X1="571" Y1="413" X2="571" Y2="154"/>
+        <dgm:gSegment X1="571" Y1="154" X2="746" Y2="154"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="RegistrarBoleto/REGISTRA_LOG_ERRO" target="REGISTRA_LOG_ERRO" width="2">
+        <dgm:gSegment X1="532" Y1="438" X2="586" Y2="438"/>
+        <dgm:gSegment X1="586" Y1="438" X2="586" Y2="272"/>
+        <dgm:gSegment X1="586" Y1="272" X2="746" Y2="272"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="pollingBoletos" target="RegistrarBoleto/pollingBoletos" width="2">
+        <dgm:gSegment X1="168" Y1="388" X2="382" Y2="388"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="RegistrarBoleto/Autorizador" target="Autorizador" width="2">
+        <dgm:gSegment X1="532" Y1="463" X2="601" Y2="463"/>
+        <dgm:gSegment X1="601" Y1="463" X2="601" Y2="390"/>
+        <dgm:gSegment X1="601" Y1="390" X2="746" Y2="390"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="RegistrarBoleto/ATUALIZA_TOKEN" target="ATUALIZA_TOKEN" width="2">
+        <dgm:gSegment X1="532" Y1="488" X2="601" Y2="488"/>
+        <dgm:gSegment X1="601" Y1="488" X2="601" Y2="508"/>
+        <dgm:gSegment X1="601" Y1="508" X2="746" Y2="508"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="RegistrarBoleto/CONSULTA_TOKEN" target="CONSULTA_TOKEN" width="2">
+        <dgm:gSegment X1="532" Y1="513" X2="586" Y2="513"/>
+        <dgm:gSegment X1="586" Y1="513" X2="586" Y2="626"/>
+        <dgm:gSegment X1="586" Y1="626" X2="746" Y2="626"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="RegistrarBoleto/ATUALIZA_STATUS" target="ATUALIZA_STATUS" width="2">
+        <dgm:gSegment X1="532" Y1="538" X2="571" Y2="538"/>
+        <dgm:gSegment X1="571" Y1="538" X2="571" Y2="744"/>
+        <dgm:gSegment X1="571" Y1="744" X2="746" Y2="744"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="RegistrarBoleto/EXCLUI_POLLING" target="EXCLUI_POLLING" width="2">
+        <dgm:gSegment X1="532" Y1="563" X2="556" Y2="563"/>
+        <dgm:gSegment X1="556" Y1="563" X2="556" Y2="862"/>
+        <dgm:gSegment X1="556" Y1="862" X2="746" Y2="862"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

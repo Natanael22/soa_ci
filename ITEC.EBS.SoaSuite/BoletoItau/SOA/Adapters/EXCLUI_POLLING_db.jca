@@ -1,0 +1,13 @@
+<adapter-config name="EXCLUI_POLLING" adapter="db" wsdlLocation="../WSDLs/EXCLUI_POLLING.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="Conn_TKTSVC" location="eis/DB/Conn_TKTSVC"/>
+  <endpoint-interaction portType="EXCLUI_POLLING_ptt" operation="EXCLUI_POLLING">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="APPS"/>
+      <property name="PackageName" value="TKT_AR_BOLETO_REGISTRADO_PKG"/>
+      <property name="ProcedureName" value="EXCLUI_POLLING"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

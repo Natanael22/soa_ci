@@ -1,0 +1,73 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+    
+     targetNamespace="http://Edenred.Services/BoletoItau"
+     xmlns:s="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+     xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+     xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+     xmlns:tns="http://Edenred.Services/BoletoItau"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+     xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:types>
+        <s:schema elementFormDefault="qualified" targetNamespace="http://Edenred.Services/BoletoItau">
+            <s:element name="Request">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="scope" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="grant_type" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="client_id" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="client_secret" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="Response">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="access_token" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="token_type" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="expires_in" type="s:integer"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            
+        </s:schema>
+        
+    </wsdl:types>
+    <wsdl:message name="RequestSoapIn">
+        <wsdl:part name="parameters" element="tns:Request"/>
+    </wsdl:message>
+    <wsdl:message name="ResponseSoapOut">
+        <wsdl:part name="parameters" element="tns:Response"/>
+    </wsdl:message>
+    
+    <wsdl:portType name="AutorizadorItauSoap">
+        <wsdl:operation name="AutorizadorItau">
+            <wsdl:input message="tns:RequestSoapIn"/>
+            <wsdl:output message="tns:ResponseSoapOut"/>
+            
+        </wsdl:operation>
+        
+    </wsdl:portType>
+    <wsdl:binding name="AutorizadorItauSoap" type="tns:AutorizadorItauSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="AutorizadorItau">
+            <soap:operation style="document" soapAction="http://Edenred.Services/BoletoItau"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>       
+    </wsdl:binding>
+    <wsdl:service name="AutorizadorItau">
+        <wsdl:port name="AutorizadorItauSoap" binding="tns:AutorizadorItauSoap">
+            <soap:address location="http://localhost/Edenred.Services/Itau/Autorizador"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAConfigPlan xmlns:jca="http://platform.integration.oracle/blocks/adapter/fw/metadata" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:edl="http://schemas.oracle.com/events/edl" xmlns="http://schemas.oracle.com/soa/configplan">
+   <composite name="BoletoItau">
+      <!--Add search and replace rules for the import section of a composite
+	Example:
+	<searchReplace>
+		<search>http://my-dev-server</search>
+		<replace>http://my-test-server</replace>
+	<searchReplace>
+	<searchReplace>
+		<search>8888</search>
+		<replace>8889</replace>
+	<searchReplace>-->
+      <import>
+         <searchReplace>
+            <search/>
+            <replace/>
+         </searchReplace>
+      </import>
+      <!--Add search and replace rules for the service properties-->
+      <service name="pollingBoletos">
+         <property name="jca.retry.count">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.interval">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.backoff">
+            <replace>2</replace>
+         </property>
+         <property name="jca.retry.maxInterval">
+            <replace>120</replace>
+         </property>
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="jca">
+            <property name="useRejectedMessageRecovery">
+               <replace>true</replace>
+            </property>
+         </binding>
+      </service>
+      <property name="productVersion">
+         <replace>12.2.1.2.0.161003</replace>
+      </property>
+      <property name="compositeID">
+         <replace>0590b702-0d85-411a-bf88-e377cf182e23</replace>
+      </property>
+      <!--Add search and replace rules for the component properties
+	For components and service/reference bindings, you can add policy references.
+	Example:
+	<component name="*">
+		<wsp:PolicyReference orawsp:category="management" orawsp:status="enabled" URI="oracle/log_policy"/>
+	</component>-->
+      <component name="RegistrarBoleto">
+         <property name="bpel.config.transaction">
+            <replace>notSupported</replace>
+         </property>
+         <property name="bpel.config.oneWayDeliveryPolicy">
+            <replace>async.persist</replace>
+         </property>
+      </component>
+      <reference name="Autorizador">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://Edenred.Services/BoletoItau#wsdl.endpoint(AutorizadorItau/AutorizadorItauSoap)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>WSDLs/autorizador.wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="GerarBoleto">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/ITEC.EBS.ServiceBus/BoletoItau/geradorBoletosItau#wsdl.endpoint(geradorBoletosItau_ptt-bindingQSService/geradorBoletosItau_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>WSDLs/geradorBoletosItau.wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="REGISTRA_BOLETO">
+         <property name="jca.retry.count">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.interval">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.backoff">
+            <replace>2</replace>
+         </property>
+         <property name="jca.retry.maxInterval">
+            <replace>120</replace>
+         </property>
+         <binding type="jca"/>
+      </reference>
+      <reference name="REGISTRA_LOG_ERRO">
+         <property name="jca.retry.count">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.interval">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.backoff">
+            <replace>2</replace>
+         </property>
+         <property name="jca.retry.maxInterval">
+            <replace>120</replace>
+         </property>
+         <binding type="jca"/>
+      </reference>
+      <reference name="ATUALIZA_TOKEN">
+         <property name="jca.retry.count">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.interval">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.backoff">
+            <replace>2</replace>
+         </property>
+         <property name="jca.retry.maxInterval">
+            <replace>120</replace>
+         </property>
+         <binding type="jca"/>
+      </reference>
+      <reference name="CONSULTA_TOKEN">
+         <property name="jca.retry.count">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.interval">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.backoff">
+            <replace>2</replace>
+         </property>
+         <property name="jca.retry.maxInterval">
+            <replace>120</replace>
+         </property>
+         <binding type="jca"/>
+      </reference>
+      <reference name="ATUALIZA_STATUS">
+         <property name="jca.retry.count">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.interval">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.backoff">
+            <replace>2</replace>
+         </property>
+         <property name="jca.retry.maxInterval">
+            <replace>120</replace>
+         </property>
+         <binding type="jca"/>
+      </reference>
+      <reference name="EXCLUI_POLLING">
+         <property name="jca.retry.count">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.interval">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.backoff">
+            <replace>2</replace>
+         </property>
+         <property name="jca.retry.maxInterval">
+            <replace>120</replace>
+         </property>
+         <binding type="jca"/>
+      </reference>
+   </composite>
+   <!--To configure monitor.config: 
+	<property name="enabled"><replace>true</replace></property>
+	<property name="dataObjectsFolder"><searchReplace><search>mydev</search><replace>myproduction</replace></searchReplace></property>
+	
+	sample properties to configure for adapter: 
+	<jca:property name="QueueName"><replace>medmq1</replace></jca:property>
+	
+	To add search and replace rules for wsdls, xsd and jca files
+	Example:
+	<searchReplace>
+		<search>http://my-dev-server</search>
+		<replace>http://my-test-server</replace>
+	<searchReplace>
+	<searchReplace>
+		<search>8888</search>
+		<replace>8889</replace>
+	<searchReplace>
+	-->
+   <wsdlAndSchema name="Adapters/ATUALIZA_STATUS_db.jca|Adapters/ATUALIZA_TOKEN_db.jca|Adapters/CONSULTA_TOKEN_db.jca|Adapters/EXCLUI_POLLING_db.jca|Adapters/pollingBoletos_db.jca|Adapters/REGISTRA_BOLETO_db.jca|Adapters/REGISTRA_LOG_ERRO_db.jca|Schemas/ATUALIZA_STATUS_sp.xsd|Schemas/ATUALIZA_TOKEN_sp.xsd|Schemas/CONSULTA_TOKEN_sp.xsd|Schemas/EXCLUI_POLLING_sp.xsd|Schemas/header.xsd|Schemas/pollingBoletos_table.xsd|Schemas/REGISTRA_BOLETO_sp.xsd|Schemas/REGISTRA_LOG_ERRO_sp.xsd|Schemas/request_geradorBoletos.xsd|Schemas/response_geradorBoletos.xsd|Schemas/validation_error.xsd|WSDLs/ATUALIZA_STATUS.wsdl|WSDLs/ATUALIZA_TOKEN.wsdl|WSDLs/autorizador.wsdl|WSDLs/autorizadorWrapper.wsdl|WSDLs/CONSULTA_TOKEN.wsdl|WSDLs/EXCLUI_POLLING.wsdl|WSDLs/geradorBoletosItau.wsdl|WSDLs/pollingBoletos.wsdl|WSDLs/REGISTRA_BOLETO.wsdl|WSDLs/REGISTRA_LOG_ERRO.wsdl|WSDLs/RuntimeFault.wsdl">
+      <searchReplace>
+         <search>localhost</search>
+         <replace>enterprisebus.americas.net</replace>
+      </searchReplace>
+   </wsdlAndSchema>
+</SOAConfigPlan>

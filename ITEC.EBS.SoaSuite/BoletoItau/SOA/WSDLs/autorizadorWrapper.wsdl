@@ -1,0 +1,31 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+    
+     targetNamespace="http://Edenred.Services/BoletoItau"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:tns="http://Edenred.Services/BoletoItau"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:ns1="http://Edenred.Services/geradorBoletosItau_geradorBoletos_request"
+     xmlns:ns2="http://schemas.oracle.com/bpel/extension"
+     xmlns:ns3="http://Edenred.Services/geradorBoletosItau_geradorBoletos_validation_error"
+     xmlns:ns4="http://Edenred.Services/geradorBoletosItau_geradorBoletos_validation_token"
+     xmlns:ns5="http://Edenred.Services/geradorBoletosItau_geradorBoletos_validation_422"
+    >
+    <plnk:partnerLinkType name="Autorizador">
+        <plnk:role name="AutorizadorItauSoap" portType="tns:AutorizadorItauSoap"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://Edenred.Services/BoletoItau" location="autorizador.wsdl"/>
+    <wsdl:import namespace="http://schemas.oracle.com/bpel/extension" location="RuntimeFault.wsdl"/>
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://Edenred.Services/geradorBoletosItau_geradorBoletos_request"
+                 schemaLocation="../Schemas/header.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://Edenred.Services/geradorBoletosItau_geradorBoletos_validation_error"
+                 schemaLocation="../Schemas/validation_error.xsd"/>
+        </xsd:schema>        
+    </wsdl:types>
+</wsdl:definitions>

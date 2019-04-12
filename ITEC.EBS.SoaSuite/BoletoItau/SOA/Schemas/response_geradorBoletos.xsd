@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://Edenred.Services/geradorBoletosItau_geradorBoletos_response"
+            targetNamespace="http://Edenred.Services/geradorBoletosItau_geradorBoletos_response"
+            elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON"
+            nxsd:encoding="UTF-8">
+  <xsd:element name="Root-Element">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="beneficiario">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigo_banco_beneficiario" type="xsd:string"/>
+              <xsd:element name="digito_verificador_banco_beneficiario" type="xsd:string"/>
+              <xsd:element name="agencia_beneficiario" type="xsd:string"/>
+              <xsd:element name="conta_beneficiario" type="xsd:string"/>
+              <xsd:element name="digito_verificador_conta_beneficiario" type="xsd:string"/>
+              <xsd:element name="cpf_cnpj_beneficiario" type="xsd:string"/>
+              <xsd:element name="nome_razao_social_beneficiario" type="xsd:string"/>
+              <xsd:element name="logradouro_beneficiario" type="xsd:string"/>
+              <xsd:element name="bairro_beneficiario" type="xsd:string"/>
+              <xsd:element name="complemento_beneficiario" type="xsd:string"/>
+              <xsd:element name="cidade_beneficiario" type="xsd:string"/>
+              <xsd:element name="uf_beneficiario" type="xsd:string"/>
+              <xsd:element name="cep_beneficiario" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="pagador">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="cpf_cnpj_pagador" type="xsd:string"/>
+              <xsd:element name="nome_razao_social_pagador" type="xsd:string"/>
+              <xsd:element name="logradouro_pagador" type="xsd:string"/>
+              <xsd:element name="complemento_pagador" type="xsd:string"/>
+              <xsd:element name="bairro_pagador" type="xsd:string"/>
+              <xsd:element name="cidade_pagador" type="xsd:string"/>
+              <xsd:element name="uf_pagador" type="xsd:string"/>
+              <xsd:element name="cep_pagador" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="sacador_avalista">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="cpf_cnpj_sacador_avalista" type="xsd:string"/>
+              <xsd:element name="nome_razao_social_sacador_avalista" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="moeda">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="sigla_moeda" type="xsd:string"/>
+              <xsd:element name="quantidade_moeda" type="xsd:string"/>
+              <xsd:element name="cotacao_moeda" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="vencimento_titulo" type="xsd:string"/>
+        <xsd:element name="tipo_carteira_titulo" type="xsd:string"/>
+        <xsd:element name="nosso_numero" type="xsd:string"/>
+        <xsd:element name="seu_numero" type="xsd:string"/>
+        <xsd:element name="especie" type="xsd:string"/>
+        <xsd:element name="codigo_barras" type="xsd:string"/>
+        <xsd:element name="numero_linha_digitavel" type="xsd:string"/>
+        <xsd:element name="local_pagamento" type="xsd:string"/>
+        <xsd:element name="data_processamento" type="xsd:string"/>
+        <xsd:element name="data_emissao" type="xsd:string"/>
+        <xsd:element name="uso_banco" type="xsd:string"/>
+        <xsd:element name="valor_titulo" type="xsd:string"/>
+        <xsd:element name="valor_desconto" type="xsd:string"/>
+        <xsd:element name="valor_outra_deducao" type="xsd:string"/>
+        <xsd:element name="valor_juro_multa" type="xsd:string"/>
+        <xsd:element name="valor_outro_acrescimo" type="xsd:string"/>
+        <xsd:element name="valor_total_cobrado" type="xsd:string"/>
+        <xsd:element name="texto_informacao_cliente_beneficiario" type="xsd:string"/>
+        <xsd:element name="codigo_mensagem_erro" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:annotation xmlns="">
+    <xsd:appinfo>NXSDSAMPLE=</xsd:appinfo>
+    <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+  </xsd:annotation>
+</xsd:schema>
