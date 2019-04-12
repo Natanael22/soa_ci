@@ -22,6 +22,7 @@
         <groupId>com.oracle.soa</groupId>
         <artifactId>sar-common</artifactId>
         <version>12.1.3-0-0</version>
+		<relativePath/>
     </parent>
     
     <properties>
