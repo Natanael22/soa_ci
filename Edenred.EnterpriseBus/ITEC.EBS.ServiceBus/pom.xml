@@ -4,6 +4,7 @@
     <groupId>ITEC.EBS.ServiceBus</groupId>
     <artifactId>ITEC.EBS.ServiceBus</artifactId>
     <version>1.0-SNAPSHOT</version>
+	<relativePath />
     <packaging>pom</packaging>
     <modules>        
     	<module>SoaApp</module>
